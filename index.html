@@ -35,7 +35,7 @@
 
 <body>
   <div class="container">
-    <img id="question-image" src="photo_2025-04-02_20-56-25.jpg" alt="My Image" width="300">
+    <img id="question-image" src="images/photo_2025-04-02_20-56-25.jpg" alt="My Image" width="300">
     <h1 id="question-text">تتوقع اليوم ميلاددد مينن!؟</h1>
     <div class="btn">
       <button id="yes-btn" onclick="checkAnswer(true)">ريريررييرري</button>
@@ -47,75 +47,21 @@
     let questions = [
       {
         text: "تتوقع اليوم ميلاددد مينن!؟", 
-        image: "photo_2025-04-02_20-56-25.jpg", 
+        image: "images/photo_2025-04-02_20-56-25.jpg", 
         yesText: "ريريررييرري", 
         noText: "الشامانيب حق ايرون ", 
         incorrectText: "!!بهبدك اختار زين",  // النص المخصص للإجابة الخاطئة
-        incorrectImage: "photo_2025-04-02_21-52-12.jpg"  // الصورة المخصصة للإجابة الخاطئة
+        incorrectImage: "images/photo_2025-04-02_21-52-12.jpg"  // الصورة المخصصة للإجابة الخاطئة
       },
       {
         text: "يسسسسس بهاذي المناسبة خلنا نلعب لعبة", 
-        image: "photo_2025-04-02_20-56-38.jpg", 
+        image: "images/photo_2025-04-02_20-56-38.jpg", 
         yesText: "تمامم؟", 
         noText: "انا بخرب واختار لا", 
         incorrectText: "",  // النص المخصص للإجابة الخاطئة
-        incorrectImage: "photo_2025-04-02_20-56-39.jpg"  // الصورة المخصصة للإجابة الخاطئة
+        incorrectImage: "images/photo_2025-04-02_20-56-39.jpg"  // الصورة المخصصة للإجابة الخاطئة
       },
-      {
-        text: " كم فلم تابعنااا؟", 
-        image: "photo_2025-04-02_20-56-15.jpg", 
-        yesText: "64", 
-        noText: "62", 
-        incorrectText: "غطيت عيوني عشان الاجابة غلط",  // النص المخصص للإجابة الخاطئة
-        incorrectImage: "photo_2025-04-02_20-56-18.jpg"  // الصورة المخصصة للإجابة الخاطئة
-      },
-      {
-        text: "تذكر الساندويتش حقك من وين استلهمته", 
-        image: "photo_2025-04-02_20-56-27.jpg", 
-        yesText: "استهلمته من الطبيعة", 
-        noText: "استهلمته من الثلاجة", 
-        incorrectText: "هممم قربت, شف حارق التوست ذكرني بواحد هههههه",  // النص المخصص للإجابة الخاطئة
-        incorrectImage: "photo_2025-04-02_20-56-26.jpg"  // الصورة المخصصة للإجابة الخاطئة
-      },
-      {
-        text: " اول مرة حطينا صورة كوبل كانت وش؟", 
-        image: "photo_2025-04-02_20-56-33.jpg", 
-        noText: "Even if this love Disappears from the world tonight", 
-        yesText: "King of the land",
-        incorrectText: "كانت الصورة قريبه من ذي",  // النص المخصص للإجابة الخاطئة
-        incorrectImage: "photo_2025-04-02_20-56-34.jpg"  // الصورة المخصصة للإجابة الخاطئة
-      },
-      {
-        text: "اول خطة رحلة سويناها كانت اول مدينة هي؟", 
-        image: "photo_2025-04-02_20-56-23.jpg", 
-        noText: "دبي", 
-        yesText: "العلا",
-        incorrectText: "حاول تتذكر كانت بسيارتي ههههه",  // النص المخصص للإجابة الخاطئة
-        incorrectImage: "photo_2025-04-02_20-56-21.jpg"  // الصورة المخصصة للإجابة الخاطئة
-      
-      },
-      {
-        text: "مين افضل واحد يحتفل بميلادك", 
-        image: "photo_2025-04-02_20-56-31.jpg", 
-        yesText: "دودي", 
-        noText: "دودي2", 
-        incorrectText: "مافيييييييي الاااا دودويييي واحدددد",  // النص المخصص للإجابة الخاطئة
-        incorrectImage: "photo_2025-04-02_20-56-30.jpg"  
-      },
-      {
-        text: "اكبر مخاوفي كل سنة ان؟", 
-        image: "photo_2025-04-02_20-56-20.jpg", 
-        noText: "بالجامعة F اجيب", 
-        yesText: "تخلص افكاري ومعرف كيف احتفل فيك",
-        incorrectText: "أنت اهم",  // النص المخصص للإجابة الخاطئة
-        incorrectImage: "photo_2025-04-02_20-56-36.jpg" 
-      }
-
-    
-      
-     
-  
-      
+      // باقي الأسئلة...
     ];
     
     let currentQuestion = 0;
@@ -127,14 +73,13 @@
           updateQuestion();  // Update question if the answer is correct
         } else {
           document.getElementById("question-text").innerText = "HAPPPPPPY BIRTHDAYYYYYY              أحبككككك وكل مرة بحتفل فيك لانك انت افضل لحظات حياتي الله يسعدك قد ماتسعدني واكثر";
-          document.getElementById("question-image").src = "photo_2025-04-02_23-37-40.jpg";  // Change to a happy image
+          document.getElementById("question-image").src = "images/photo_2025-04-02_23-37-40.jpg";  // Change to a happy image
           document.querySelector(".btn").style.display = "none";
         }
       } else {
         // Display the specific incorrect image and text for the current question
         document.getElementById("question-text").innerText = questions[currentQuestion].incorrectText;  // Display custom incorrect text
         document.getElementById("question-image").src = questions[currentQuestion].incorrectImage;  // Display custom sad image
-  
       }
     }
     
@@ -144,8 +89,6 @@
       document.getElementById("yes-btn").innerText = questions[currentQuestion].yesText;  // Update "Yes" button
       document.getElementById("no-btn").innerText = questions[currentQuestion].noText;  // Update "No" button
     }
-    <img id="question-image" src="images/photo_2025-04-02_20-56-25.jpg" alt="My Image" width="300">
-
   </script>
 </body>
 
