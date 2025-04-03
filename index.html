@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -14,7 +13,7 @@
     }
     
     .btn button {
-      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      background: linear-gradient(135deg, #727a72, #933bb6);
       color: white;
       border: none;
       padding: 12px 25px;
@@ -27,7 +26,7 @@
     }
     
     .btn button:hover {
-      background: linear-gradient(135deg, #ff758c, #ff7eb3);
+      background: linear-gradient(135deg, #9a2ba8, #b438ae);
       transform: scale(1.1);
     }
   </style>
@@ -39,7 +38,7 @@
     <h1 id="question-text">تتوقع اليوم ميلاددد مينن!؟</h1>
     <div class="btn">
       <button id="yes-btn" onclick="checkAnswer(true)">ريريررييرري</button>
-      <button id="no-btn" onclick="checkAnswer(false)">الشايب حق ايرون مان</button>
+      <button id="no-btn" onclick="checkAnswer(false)">رنيم</button>
     </div>
   </div>
 
@@ -47,104 +46,130 @@
     let questions = [
       {
         text: "تتوقع اليوم ميلاددد مينن!؟", 
-        image: "photo_2025-04-02_20-56-25.jpg", 
+        image: "images/photo_2025-04-02_20-56-25.jpg", 
         yesText: "ريريررييرري", 
-        noText: "الشامانيب حق ايرون ", 
-        incorrectText: "!!بهبدك اختار زين",  // النص المخصص للإجابة الخاطئة
-        incorrectImage: "photo_2025-04-02_21-52-12.jpg"  // الصورة المخصصة للإجابة الخاطئة
+        noText: "رنيم", 
+        incorrectText: "!!وششش ذا الطفش بهبدك صصحصح",  
+        incorrectImage: "images/photo_2025-04-02_21-52-12.jpg",
+        correctAnswer: true  // true means "yes" is correct
       },
       {
         text: "يسسسسس بهاذي المناسبة خلنا نلعب لعبة", 
-        image: "photo_2025-04-02_20-56-38.jpg", 
+        image: "images/photo_2025-04-02_20-56-38.jpg", 
         yesText: "تمامم؟", 
         noText: "انا بخرب واختار لا", 
-        incorrectText: "",  // النص المخصص للإجابة الخاطئة
-        incorrectImage: "photo_2025-04-02_20-56-39.jpg"  // الصورة المخصصة للإجابة الخاطئة
+        incorrectText: "",  
+        incorrectImage: "images/photo_2025-04-02_20-56-39.jpg",
+        correctAnswer: true  // true means "yes" is correct
       },
       {
-        text: " كم فلم تابعنااا؟", 
-        image: "photo_2025-04-02_20-56-15.jpg", 
+        text: "كم فلم تابعنااا؟", 
+        image: "images/photo_2025-04-02_20-56-15.jpg", 
         yesText: "64", 
         noText: "62", 
-        incorrectText: "غطيت عيوني عشان الاجابة غلط",  // النص المخصص للإجابة الخاطئة
-        incorrectImage: "photo_2025-04-02_20-56-18.jpg"  // الصورة المخصصة للإجابة الخاطئة
+        incorrectText: "غطيت عيوني عشان الاجابة غلط",  
+        incorrectImage: "images/photo_2025-04-02_20-56-18.jpg",
+        correctAnswer: true  // true means "yes" is correct
       },
       {
         text: "تذكر الساندويتش حقك من وين استلهمته", 
-        image: "photo_2025-04-02_20-56-27.jpg", 
-        yesText: "استهلمته من الطبيعة", 
-        noText: "استهلمته من الثلاجة", 
-        incorrectText: "هممم قربت, شف حارق التوست ذكرني بواحد هههههه",  // النص المخصص للإجابة الخاطئة
-        incorrectImage: "photo_2025-04-02_20-56-26.jpg"  // الصورة المخصصة للإجابة الخاطئة
+        image: "images/photo_2025-04-02_20-56-27.jpg", 
+        yesText: "استهلمته من الثلاجة", 
+        noText: "استهلمته من الطبيعة", 
+        incorrectText: "هممم قربت, شف حارق التوست ذكرني بواحد هههههه",  
+        incorrectImage: "images/photo_2025-04-02_20-56-26.jpg"
       },
       {
-        text: " اول مرة حطينا صورة كوبل كانت وش؟", 
-        image: "photo_2025-04-02_20-56-33.jpg", 
+        text: "اول مرة حطينا صورة كوبل كانت وش؟", 
+        image: "images/photo_2025-04-02_20-56-33.jpg", 
         noText: "Even if this love Disappears from the world tonight", 
         yesText: "King of the land",
-        incorrectText: "كانت الصورة قريبه من ذي",  // النص المخصص للإجابة الخاطئة
-        incorrectImage: "photo_2025-04-02_20-56-34.jpg"  // الصورة المخصصة للإجابة الخاطئة
+        incorrectText: "كانت الصورة قريبه من ذي اشتقتتت",  
+        incorrectImage: "images/photo_2025-04-02_20-56-34.jpg"
       },
       {
         text: "اول خطة رحلة سويناها كانت اول مدينة هي؟", 
-        image: "photo_2025-04-02_20-56-23.jpg", 
-        noText: "دبي", 
-        yesText: "العلا",
-        incorrectText: "حاول تتذكر كانت بسيارتي ههههه",  // النص المخصص للإجابة الخاطئة
-        incorrectImage: "photo_2025-04-02_20-56-21.jpg"  // الصورة المخصصة للإجابة الخاطئة
-      
+        image: "images/photo_2025-04-02_20-56-23.jpg",
+        yesText: "دبي", 
+        noText: "العلا", 
+        incorrectText: "حاول تتذكر كانت بسيارتي ههههه",  
+        incorrectImage: "images/photo_2025-04-02_20-56-21.jpg"
+      },
+      {
+        text: "افضل شيء ممكن يصير بيومي", 
+        image: "images/photo_2025-04-03_05-14-14.jpg", 
+        yesText: "أسولف معككك", 
+        noText: "اكل بدون لا أطرش", 
+        incorrectText: "هههههه خيرر شفيك تعالجت منزمان",  
+        incorrectImage: "images/photo_2025-04-03_05-14-11.jpg"
       },
       {
         text: "مين افضل واحد يحتفل بميلادك", 
-        image: "photo_2025-04-02_20-56-31.jpg", 
-        yesText: "دودي", 
-        noText: "دودي2", 
-        incorrectText: "مافيييييييي الاااا دودويييي واحدددد",  // النص المخصص للإجابة الخاطئة
-        incorrectImage: "photo_2025-04-02_20-56-30.jpg"  
+        image: "images/photo_2025-04-02_20-56-31.jpg", 
+        yesText: "2دودي", 
+        noText: "دودي", 
+        incorrectText: "مافيييييييي الاااا دودويييي واحدددد",  
+        incorrectImage: "images/photo_2025-04-02_20-56-30.jpg"
       },
       {
         text: "اكبر مخاوفي كل سنة ان؟", 
-        image: "photo_2025-04-02_20-56-20.jpg", 
+        image: "images/photo_2025-04-02_20-56-20.jpg", 
         noText: "بالجامعة F اجيب", 
         yesText: "تخلص افكاري ومعرف كيف احتفل فيك",
-        incorrectText: "أنت اهم",  // النص المخصص للإجابة الخاطئة
-        incorrectImage: "photo_2025-04-02_20-56-36.jpg" 
+        incorrectText: "أنت اهم",  
+        incorrectImage: "images/photo_2025-04-02_20-56-36.jpg"
       }
-
-    
-      
-     
-  
-      
     ];
+      // Add more questions as needed
     
     let currentQuestion = 0;
     
-    function checkAnswer(isCorrect) {
+    function checkAnswer(isYesSelected) {
+      const current = questions[currentQuestion];
+      const isCorrect = (isYesSelected && current.correctAnswer) || (!isYesSelected && !current.correctAnswer);
+
       if (isCorrect) {
         currentQuestion++;
         if (currentQuestion < questions.length) {
           updateQuestion();  // Update question if the answer is correct
         } else {
           document.getElementById("question-text").innerText = "HAPPPPPPY BIRTHDAYYYYYY              أحبككككك وكل مرة بحتفل فيك لانك انت افضل لحظات حياتي الله يسعدك قد ماتسعدني واكثر";
-          document.getElementById("question-image").src = "photo_2025-04-02_23-37-40.jpg";  // Change to a happy image
+          document.getElementById("question-image").src = "images/photo_2025-04-02_23-37-40.jpg";  // Change to a happy image
           document.querySelector(".btn").style.display = "none";
         }
       } else {
         // Display the specific incorrect image and text for the current question
-        document.getElementById("question-text").innerText = questions[currentQuestion].incorrectText;  // Display custom incorrect text
-        document.getElementById("question-image").src = questions[currentQuestion].incorrectImage;  // Display custom sad image
-  
+        document.getElementById("question-text").innerText = current.incorrectText;  // Display custom incorrect text
+        document.getElementById("question-image").src = current.incorrectImage;  // Display custom sad image
       }
     }
     
     function updateQuestion() {
-      document.getElementById("question-text").innerText = questions[currentQuestion].text;  // Update text
-      document.getElementById("question-image").src = questions[currentQuestion].image;  // Update image
-      document.getElementById("yes-btn").innerText = questions[currentQuestion].yesText;  // Update "Yes" button
-      document.getElementById("no-btn").innerText = questions[currentQuestion].noText;  // Update "No" button
+      const current = questions[currentQuestion];
+      document.getElementById("question-text").innerText = current.text;  // Update text
+      document.getElementById("question-image").src = current.image;  // Update image
+      document.getElementById("yes-btn").innerText = current.yesText;  // Update "Yes" button
+      document.getElementById("no-btn").innerText = current.noText;  // Update "No" button
+
+      // Shuffle the buttons (yes-btn and no-btn) randomly
+      shuffleButtons();
     }
+
+    function shuffleButtons() {
+      const btns = document.querySelectorAll(".btn button");
+      const randomIndex = Math.random() < 0.5 ? 0 : 1;
+
+      // Swap the button texts
+      const tempText = btns[0].innerText;
+      btns[0].innerText = btns[1].innerText;
+      btns[1].innerText = tempText;
+
+      // Swap the button functions (onClick) as well
+      const tempOnClick = btns[0].onclick;
+      btns[0].onclick = btns[1].onclick;
+      btns[1].onclick = tempOnClick;
+    }
+
   </script>
 </body>
-
 </html>
