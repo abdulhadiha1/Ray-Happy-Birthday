@@ -12,8 +12,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: url(photo_2025-04-03_22-41-16.jpg) no-repeat center center/cover;
-  }
+    background: url('images/photo_2025-04-03_22-41-16.jpg') no-repeat center center/cover;
+}
+
   
   .container {
     display: flex;
