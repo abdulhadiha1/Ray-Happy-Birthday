@@ -12,7 +12,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #933bb6;
+    background: url(photo_2025-04-03_22-41-16.jpg) no-repeat center center/cover;
   }
   
   .container {
@@ -59,11 +59,17 @@
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* ظل خفيف للإطار */
   }
   #question-text {
-    color: #ffffff; /* تغيير لون النص */
-    font-size: 24px; /* حجم الخط */
+    color: #ffffff; /* لون النص */
+    font-size: 20px; /* حجم الخط */
     font-weight: bold; /* جعل الخط سميك */
     text-align: center; /* توسيط النص */
-  }
+    background: rgba(0, 0, 0, 0.4); /* لون خلفية شفاف */
+    padding: 1px 2px; /* مسافة داخلية حول النص */
+    border-radius: 5px; /* حواف ناعمة */
+    display: inline-block; /* يجعل الخلفية بحجم النص */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); /* ظل خفيف */
+}
+
   
   
   
