@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Happy Birthdayy Rayyyy<3</title>
+  <title>happy birthdayy rayyyy</title>
   <link rel="stylesheet" href="./style.css" />
   <style>
     .btn {
@@ -133,7 +133,9 @@
         if (currentQuestion < questions.length) {
           updateQuestion();  // Update question if the answer is correct
         } else {
-          document.getElementById("question-text").innerText = "HAPPPPPPY BIRTHDAYYYYYY              أحبككككك وكل مرة بحتفل فيك لانك انت افضل لحظات حياتي الله يسعدك قد ماتسعدني واكثر";
+          document.getElementById("question-text").innerHTML = 
+    "<span style='font-size: 30px; font-weight: bold;'>HAPPYYY BIRTHDAYYY</span><br>أحبككككك وكل مرة بحتفل فيك لأنك أنت أفضل لحظات حياتي، الله يسعدك قد ما تسعدني وأكثر";
+  
           document.getElementById("question-image").src = "images/photo_2025-04-02_23-37-40.jpg";  // Change to a happy image
           document.querySelector(".btn").style.display = "none";
         }
